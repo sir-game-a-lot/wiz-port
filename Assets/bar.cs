@@ -22,8 +22,8 @@ public class bar : MonoBehaviour {
 		else if(countdown>0.0f)
 		{
 			countdown-=Time.deltaTime;
-			xp=new Vector3(countdown/2,gameObject.transform.localScale.y,gameObject.transform.localScale.z);
-			gameObject.transform.localScale=xp;
+			xp=new Vector3(-(countdown/2)+9,gameObject.transform.position.y,gameObject.transform.position.z);
+			gameObject.transform.position=xp;
 		}
 		
 		

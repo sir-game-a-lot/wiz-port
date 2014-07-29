@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class portalctrl2 : MonoBehaviour {
+public class portalctrl : MonoBehaviour {
 	public float countdown;
 	public float countdownc;
 	public SpriteRenderer rend;
@@ -18,7 +18,7 @@ public class portalctrl2 : MonoBehaviour {
 	}
 	
 	void  FixedUpdate (){
-		if(bar1.aposition==1){
+		if(bar1.aposition==-1){
 			if(countdown<=0.0f)
 			{
 				rend.color= new Color(.5f,.5f,.5f,.5f);
@@ -57,7 +57,7 @@ public class portalctrl2 : MonoBehaviour {
 		
 	}
 	void  OnTriggerEnter2D ( Collider2D collider  ){
-		pp = new Vector3(collider.transform.position.x,collider.transform.position.y - 1.5f,collider.transform.position.z);
+		pp = new Vector3(collider.transform.position.x,collider.transform.position.y + 1.5f,collider.transform.position.z);
 		collider.transform.position=pp;
 		bar1.add1();
 		bar1.flip();
