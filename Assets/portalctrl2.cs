@@ -18,7 +18,7 @@ public class portalctrl2 : MonoBehaviour {
 	}
 	
 	void  FixedUpdate (){
-		if(bar1.aposition==1){
+
 			if(countdown<=0.0f)
 			{
 				rend.color= new Color(.5f,.5f,.5f,.5f);
@@ -28,6 +28,7 @@ public class portalctrl2 : MonoBehaviour {
 				if(countdownc<=0.0f)
 				{
 					countdown=1.0f;
+
 				}
 				else if(countdownc>0.0f)
 				{countdownc-=Time.deltaTime;
@@ -45,20 +46,14 @@ public class portalctrl2 : MonoBehaviour {
 				countdown-=Time.deltaTime;
 				countdownc=Random.Range(0,3);
 			}
-		}
-		else{
-			rend.color= new Color(.5f,.5f,.5f,.5f);
-			gameObject.transform.collider2D.isTrigger=false;
-			countdown=0;
-		}
 		
+
 		
 		
 		
 	}
 	void  OnTriggerEnter2D ( Collider2D collider  ){
-		pp = new Vector3(collider.transform.position.x,collider.transform.position.y - 1.5f,collider.transform.position.z);
-		collider.transform.position=pp;
+
 		bar1.add1();
 		bar1.flip();
 		
