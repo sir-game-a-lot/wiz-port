@@ -46,7 +46,7 @@ gameObject.rigidbody2D.gravityScale=9;
 			{
 				position=1;
 				gameObject.rigidbody2D.velocity=new Vector2(0,0);
-				gameObject.rigidbody2D.gravityScale=-9;
+				gameObject.rigidbody2D.gravityScale=-19;
 			}
 			if(pq<0&&position==1)
 				
@@ -54,7 +54,7 @@ gameObject.rigidbody2D.gravityScale=9;
 				
 				position=-1;
 				gameObject.rigidbody2D.velocity=new Vector2(0,0);
-				gameObject.rigidbody2D.gravityScale=9;
+				gameObject.rigidbody2D.gravityScale=19;
 			}
 			
 		}

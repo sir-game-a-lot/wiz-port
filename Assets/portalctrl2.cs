@@ -9,6 +9,8 @@ public class portalctrl2 : MonoBehaviour {
 	public bar bar1;
 	public SpriteRenderer rendb;
 	public Vector3 pp;
+	public GameObject red;
+	public GameObject blue;
 	void  Start (){
 		countdown=0.0f;
 		countdownc=Random.Range(0,3);
@@ -20,7 +22,9 @@ public class portalctrl2 : MonoBehaviour {
 	void  FixedUpdate (){
 
 			if(countdown<=0.0f)
-			{
+		{
+			blue.transform.position=new Vector3(blue.transform.position.x,blue.transform.position.y,0);
+			red.transform.position=new Vector3(red.transform.position.x,red.transform.position.y,-1);
 				rend.color= new Color(.5f,.5f,.5f,.5f);
 				gameObject.transform.collider2D.isTrigger=false;
 				
@@ -40,7 +44,9 @@ public class portalctrl2 : MonoBehaviour {
 			
 			
 			else if(countdown>0.0f)
-			{
+		{
+			red.transform.position=new Vector3(red.transform.position.x,red.transform.position.y,0);
+			blue.transform.position=new Vector3(blue.transform.position.x,blue.transform.position.y,-1);
 				rend.color=new Color(1,1,1,1);
 				gameObject.transform.collider2D.isTrigger=true;
 				countdown-=Time.deltaTime;
