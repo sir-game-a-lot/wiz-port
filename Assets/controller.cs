@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class controller : MonoBehaviour {
-
+	public Transform cube;
 	public int position;
 	public Vector3 startpos;
 	public Vector3 endpos;
@@ -34,7 +34,7 @@ if(Input.GetKeyDown(KeyCode.DownArrow)&&position==1)
 position=-1;
 gameObject.rigidbody2D.velocity=Vector2(0,0);
 gameObject.rigidbody2D.gravityScale=9;
-} */
+} */	
 		if(Input.GetMouseButtonDown(0)){
 			firstpos=Input.mousePosition;
 			
@@ -45,16 +45,17 @@ gameObject.rigidbody2D.gravityScale=9;
 			if(pq>0&&position==-1)
 			{
 				position=1;
-				gameObject.rigidbody2D.velocity=new Vector2(0,0);
-				gameObject.rigidbody2D.gravityScale=-19;
+				Go.defaultEaseType = GoEaseType.SineIn;
+				cube.positionTo(.3f, new Vector3(-12.63762f,-6.522903f,-10f));
+
 			}
 			if(pq<0&&position==1)
 				
 			{
 				
 				position=-1;
-				gameObject.rigidbody2D.velocity=new Vector2(0,0);
-				gameObject.rigidbody2D.gravityScale=19;
+				cube.positionTo(.3f, new Vector3(-12.63762f,-26.54479f,-10f));
+
 			}
 			
 		}

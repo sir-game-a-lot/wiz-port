@@ -67,8 +67,7 @@ public class portalctrl2 : MonoBehaviour {
 	void  OnCollisionEnter2D ( Collision2D col  ){
 		if(col.gameObject.tag == "Player")
 		{
-			rendb = col.gameObject.GetComponent<SpriteRenderer>();
-			rendb.color= new Color(.3f,.4f,.2f,1f);
+
 			
 			Application.LoadLevel("1");}
 	}
