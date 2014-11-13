@@ -20,7 +20,7 @@ public class lookat: MonoBehaviour {
 		transform.position += dir * vel * Time.deltaTime;
 		if ((Mathf.Abs(transform.position.x-target.position.x)<0.5)&&(Mathf.Abs(transform.position.y-target.position.y)<0.5)) {
 			csn.subs();
-			Destroy(gameObject);	}
+			Application.LoadLevel("1");	}
 		var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 	}

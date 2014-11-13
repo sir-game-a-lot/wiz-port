@@ -35,11 +35,13 @@ position=-1;
 gameObject.rigidbody2D.velocity=Vector2(0,0);
 gameObject.rigidbody2D.gravityScale=9;
 } */
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0)&&(Input.mousePosition.x>45.00f)&&(Input.mousePosition.x<65.00f)&&
+		   (Input.mousePosition.y>104.00f)&&(Input.mousePosition.y<215.00f)){
 			firstpos=Input.mousePosition;
 			
 		}
-		if(Input.GetMouseButtonUp(0)){
+		if(Input.GetMouseButtonUp(0)&&(Input.mousePosition.x>45.00f)&&(Input.mousePosition.x<65.00f)&&
+		   (Input.mousePosition.y>104.00f)&&(Input.mousePosition.y<215.00f)){
 			cswipe=Input.mousePosition;
 			pq=cswipe.y-firstpos.y;
 			if(pq>0)
