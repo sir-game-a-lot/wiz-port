@@ -13,10 +13,24 @@ public class controller : MonoBehaviour {
 	public Vector2 firstpos;
 	public Vector2 cswipe;
 	public float pq;
-	
+	public float sw;
+	public float sh;
+	public float xi;
+	public float yi;
+	public float xf;
+	public float yf;
+	public float asp;
 	void  Start (){
 		position=1;
-		
+		sw = Screen.width;
+		sh = Screen.height;
+		asp = sw / sh;
+		xi = (17f/246)*1.6f*asp*sw;
+		yi = (95f / 394) * sh;
+		xf = xi + ((64f / 246) * sw);
+		yf = yi + ((131f / 394) * sh);
+
+
 	}
 	
 	void  Update (){
@@ -35,14 +49,17 @@ position=-1;
 gameObject.rigidbody2D.velocity=Vector2(0,0);
 gameObject.rigidbody2D.gravityScale=9;
 } */	
-		if(Input.GetMouseButtonDown(0)&&(Input.mousePosition.x>45.00f)&&(Input.mousePosition.x<65.00f)&&
-		   (Input.mousePosition.y>104.00f)&&(Input.mousePosition.y<215.00f)){
-			firstpos=Input.mousePosition;
-			Debug.Log (Input.mousePosition);
+		if(Input.GetMouseButtonDown(0)){
+
+			if((Input.mousePosition.x>xi)&&(Input.mousePosition.x<xf)&&
+			   (Input.mousePosition.y>yi)&&(Input.mousePosition.y<yf))
+			{firstpos=Input.mousePosition;
+				Debug.Log (Input.mousePosition);}
+
 			
 		}
-		if(Input.GetMouseButtonUp(0)&&(Input.mousePosition.x>45.00f)&&(Input.mousePosition.x<65.00f)&&
-		   (Input.mousePosition.y>104.00f)&&(Input.mousePosition.y<215.00f)){
+		if(Input.GetMouseButtonUp(0)&&(Input.mousePosition.x>xi)&&(Input.mousePosition.x<xf)&&
+		   (Input.mousePosition.y>yi)&&(Input.mousePosition.y<yf)){
 			cswipe=Input.mousePosition;
 			pq=cswipe.y-firstpos.y;
 			if(pq>0&&position==-1)
